@@ -1,0 +1,49 @@
+public class Selection_Sort {
+
+    /**
+     * this code have unfixed error
+     * it is not output correct answer!!!
+     */
+    public static void main(String[] args) {
+        int arr[] = new int[8];
+
+        arr[0] = 35655555;
+        arr[1] = 5;
+        arr[2] = 4866;
+        arr[3] = 112;
+        arr[4] = 75;
+        arr[5] = 764646;
+        arr[6] = 123;
+        arr[7] = 534;
+
+        //int[] arr = {10, 34, 2, 56, 7, 67, 88, 42};
+        int minimum = 0;
+        int index = 0;
+
+        for (int j = 0; j < arr.length; j++) {
+
+            for (int i = j; i < arr.length - 1; i++) {
+
+                if (i == j) {
+                    minimum = arr[j];
+                    index = j;
+
+                }
+                if (minimum > arr[i + 1]) {
+                    minimum = arr[i + 1];
+                    index = i + 1;
+                }
+
+            }
+
+            int temp = arr[j];
+            arr[j] = minimum;
+            arr[index] = temp;
+
+        }
+
+        for (int x = 0; x < arr.length; x++) {
+            System.out.println("" + arr[x]);
+        }
+    }
+}
